@@ -1,40 +1,33 @@
 'use strict';
 
-var _ = require('lodash');
-var websocket = require('websocket-stream');
-var eos = require('end-of-stream');
+const WebSocket = require('websocket-stream');
+const Eos = require('end-of-stream');
 
 
+module.exports = function (server) {
+  let streamCounter = 0;
+  const streams = {};
 
-module.exports = function(http) {
-  var streamCounter = 0;
-  var streams = {};
 
-
-  var emit = function(data) {
-    _.forEach(streams, function (stream) {
-      stream.write(JSON.stringify(data), function () {
-      });
+  const emit = (data) => {
+    const ids = Object.keys(streams);
+    ids.forEach((id) => {
+      streams[id].write(JSON.stringify(data), () => {});
     });
   };
 
 
-
-  var handleStream = function(stream) {
+  const handleStream = (stream) => {
     stream.id = streamCounter++;
     streams[stream.id] = stream;
 
-    eos(stream, function () {
+    Eos(stream, () => {
       delete streams[stream.id];
     });
   };
 
 
+  WebSocket.createServer({ server }, handleStream);
 
-  websocket.createServer({server: http}, handleStream);
-
-  return {
-    emit: emit
-  };
+  return { emit };
 };
-

@@ -28,7 +28,7 @@ A small microservice that causes reads on the sensor based on an offset.
 A dummy temperature sensor that sends out varying values based on what it
 receives from the actuator.
 
-### Serialisation
+### Serialization
 A service that handles reads and writes in serial fashion to the database. Uses
 websocket-stream to update the web app and thus the graph, in real time.
 
@@ -107,7 +107,7 @@ npm install -g fuge
 ```
 
 ### cURL
-Windows does not come with cURL included in CMD.exe. If you are using Windows please install cURL ensuring you select the version 
+Windows does not come with cURL included in CMD.exe. If you are using Windows please install cURL ensuring you select the version
 that matches your installed version of Windows. cURL can be found at [https://curl.haxx.se/download.html](). Please use the Windows
 generic version if using CMD.exe.
 
