@@ -1,0 +1,4 @@
+set SERIALIZER_HOST=serializer
+set SERIALIZER_PORT=10000
+set FRONTEND_PORT=10001
+node api/index.js

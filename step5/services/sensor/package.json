@@ -1,0 +1,15 @@
+{
+  "name": "driver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sensor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mqtt": "1.7.x",
+    "seneca": "1.1.x"
+  }
+}
