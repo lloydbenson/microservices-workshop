@@ -1,9 +1,9 @@
 ## Solution to challenge 2
 
-1. The influx container can be started with the scripts provided in challenge3/services/influx.  If you have the influx container created, you can run `docker start influx` to start it.
-2. The folder challenge3/services/serializer contains the code for the serialization service
-3. Start this service with the script challenge3/services/serializer/run.sh (or run.bat)
-4. Send some test data using the script challenge3/services/serializer/testWrite.sh (or testWrite.bat)
+1. The influx container can be started with the scripts provided in challenge3/influx.  If you have the influx container created, you can run `docker start influx` to start it.
+2. The folder challenge3/serializer contains the code for the serialization service
+3. Start this service with the script challenge3/serializer/run.sh (or run.bat)
+4. Send some test data using the script challenge3/serializer/testWrite.sh (or testWrite.bat)
 5. Use the influx console to view data points
 
 __note__ The serializer code is a Seneca microservice. Seneca provides an abstraction layer over various transport mechanisms including TCP, HTTP, RabbitMQ, Redis, NATS, etc... In this tutorial we are using HTTP as the transport mechanism and sending JSON based messages.

@@ -13,7 +13,7 @@ service and being displayed on the front end
 
 For the final service in our system your challenge is to wire up the actuator
 microservice. The actuator service is provided for you in
-challenge6/services/actuator.
+challenge6/actuator.
 
 The actuator service will send an offset message to the sensor via the MQTT
 broker. To enable the actuator you will need to add an entry into the fuge

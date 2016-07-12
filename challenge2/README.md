@@ -1,7 +1,7 @@
 ## Solution to challenge 1
 
 1. The container can be started with `docker run -d -p 8083:8083 -p 8086:8086 tutum/influxdb`
-2. The files in challenge2/services/influx/ contain commands to start the influx container for your convenience.
+2. The files in challenge2/influx/ contain commands to start the influx container for your convenience.
 3. Point your browser to http://localhost:8083/ to open the influx console
 
 The `-p` argument maps ports 8083 and 8086 from the container to the host. The `-d` argument tells docker to run the container in [detached mode](https://docs.docker.com/engine/reference/run/#detached-d).
@@ -13,7 +13,7 @@ You can stop the container at any time by using the `docker kill` or `docker sto
 ## Challenge 2
 ![image](../images/challenge2.png)
 
-Now that we have our database running, we are going to create a microservice to read and write to it. A serialization service has been created for you in challenge2/services/serializer.
+Now that we have our database running, we are going to create a microservice to read and write to it. A serialization service has been created for you in challenge2/serializer.
 
 Your challenge is to write a small script to start this process up and use it to write temperature values into influx DB. Once the service is up and running you can use the following command to send data points to the service.
 

@@ -5,7 +5,7 @@ influx:
     - 8086:8086
     - 8083:8083
 serializer:
-  build: ../services/serializer/
+  build: ../serializer/
   container_name: serializer
   environment:
     - INFLUX_HOST=influx

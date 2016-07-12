@@ -4,17 +4,17 @@ influx:
     - 8086:8086
     - 8083:8083
 serializer:
-  build: ../services/serializer/
+  build: ../serializer/
   container_name: serializer
 frontend:
   build: ../frontend/
   container_name: frontend
 broker:
-  build: ../services/broker/
+  build: ../broker/
   container_name: broker
 sensor:
-  build: ../services/sensor/
+  build: ../sensor/
   container_name: sensor 
 actuator:
-  build: ../services/actuator/
+  build: ../actuator/
   container_name: actuator

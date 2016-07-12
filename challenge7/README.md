@@ -19,7 +19,7 @@ lets do a couple of things:
 2. next restart the fuge shell and start all services.
 3. next lets tail the serializer service by running `tail serializer`
 4. run `ps` to show the state of the system it should report that fuge is watching all processes for changes but only tailing the serializer service
-5. open the file challenge7/services/serializer/serializer.js and add some trace output
+5. open the file challenge7/serializer/serializer.js and add some trace output
 
 __hint__ if you're not familiar with node.js you can output to the console using `console.log('hello')`
 

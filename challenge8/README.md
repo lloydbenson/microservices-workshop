@@ -1,7 +1,7 @@
 ## Solution to challenge 7
 
 1. The file challenge8/fuge/fuge-config.js has been updated to set tail to false
-2. The file challenge8/services/serializer/serializer.js has some additional trace added to it
+2. The file challenge8/serializer/serializer.js has some additional trace added to it
 2. The file challenge8/frontend/api/index.js has some additional trace added to it
 
 ## Challenge 8

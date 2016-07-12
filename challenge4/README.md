@@ -1,7 +1,7 @@
 ## Solution to challenge 3
 
-1. The influx container can be started with the scripts provided in challenge4/services/influx
-2. Start the serialization service with the script challenge4/services/serializer/run.sh (or run.bat)
+1. The influx container can be started with the scripts provided in challenge4/influx
+2. Start the serialization service with the script challenge4/serializer/run.sh (or run.bat)
 3. Start the frontend with a script that has the following contents:
 ```
 #!/bin/bash
@@ -12,7 +12,7 @@ node index.js
 ```
 
 4. Open the frontend at http://localhost:10001/
-5. Send some test data using the script challenge4/services/serializer/testWrite.sh (or testWrite.bat)
+5. Send some test data using the script challenge4/serializer/testWrite.sh (or testWrite.bat)
 6. The data points should appear on the frontend chart
 
 ## Challenge 4
@@ -25,7 +25,7 @@ The folder challenge4/fuge contains two files:
 * compose-dev.yml - a docker compose format file that specifies the processes that make up our system
 * fuge-config.json - global fuge settings
 
-Your challenge is to run the system using the fuge shell. You can find some documentation on fuge here: [https://github.com/apparatus/fuge](https://github.com/apparatus/fuge). Once you have the system started up you can check that everything is working by using the script challenge4/services/serializer/testWrite.sh (or testWrite.bat). You should see data coming through to the frontend chart.
+Your challenge is to run the system using the fuge shell. You can find some documentation on fuge here: [https://github.com/apparatus/fuge](https://github.com/apparatus/fuge). Once you have the system started up you can check that everything is working by using the script challenge4/serializer/testWrite.sh (or testWrite.bat). You should see data coming through to the frontend chart.
 
 __hint__ you will need to stop all of the previously running processes and containers first.
 

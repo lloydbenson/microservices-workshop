@@ -6,7 +6,7 @@ influx:
     - 8083:8083
 serializer:
   env_file: env
-  build: ../services/serializer/
+  build: ../serializer/
   container_name: serializer
   links:
     - influx:influx
@@ -14,7 +14,7 @@ serializer:
     - 10000:10000
 broker:
   env_file: env
-  build: ../services/broker/
+  build: ../broker/
   container_name: broker
   links:
     - serializer:serializer
@@ -24,7 +24,7 @@ broker:
     - 8883:8883
 sensor:
   env_file: env
-  build: ../services/sensor/
+  build: ../sensor/
   container_name: sensor 
   links:
     - broker:broker
@@ -32,7 +32,7 @@ sensor:
     - 10003:10003
 actuator:
   env_file: env
-  build: ../services/actuator/
+  build: ../actuator/
   container_name: actuator
   links:
     - broker:broker

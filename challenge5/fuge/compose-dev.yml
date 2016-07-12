@@ -5,7 +5,7 @@ influx:
     - 8086:8086
     - 8083:8083
 serializer:
-  build: ../services/serializer/
+  build: ../serializer/
   container_name: serializer
   environment:
     - INFLUX_HOST=influx
@@ -26,7 +26,7 @@ frontend:
   ports:
     - 10001:10001
 broker:
-  build: ../services/broker/
+  build: ../broker/
   container_name: broker
   environment:
     - SERIALIZER_HOST=serializer
@@ -38,7 +38,7 @@ broker:
     - 1883:1883
     - 8883:8883
 sensor:
-  build: ../services/sensor/
+  build: ../sensor/
   container_name: sensor
   environment:
     - BROKER_HOST=broker
