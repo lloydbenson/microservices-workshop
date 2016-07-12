@@ -14,7 +14,7 @@ service and being displayed on the front end
 ![image](../docs/step6.png)
 
 For the final service in our system your challenge is to wire up the actuator
-micro-service. The actuator service is provided for you in
+microservice. The actuator service is provided for you in
 step6/services/actuator.
 
 The actuator service will send an offset message to the sensor via the MQTT

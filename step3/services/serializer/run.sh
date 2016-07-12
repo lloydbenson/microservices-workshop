@@ -1,3 +1,3 @@
-export INFLUX_HOST=$(docker ps -a | grep 'influxdb' | awk '{print $1}' | xargs docker inspect --format '{{ .NetworkSettings.IPAddress }}')
+export INFLUX_HOST=127.0.0.1
 export SERIALIZER_PORT=10000
-node .
+node serializer.js

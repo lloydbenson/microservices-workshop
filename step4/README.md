@@ -4,15 +4,23 @@
 
 1. The influx container can be started with the scripts provided in step4/services/influx
 2. Start the serialization service with the script step4/services/serializer/run.sh (or run.bat)
-3. Start the frontend with the script step4/frontend/run.sh (or run.bat)
-4. open the frontend at http://localhost:10001/
+3. Start the frontend with a script that has the following contents:
+```
+#!/bin/bash
+export SERIALIZER_HOST=127.0.0.1
+export SERIALIZER_PORT=10000
+export FRONTEND_PORT=10001
+node index.js
+```
+
+4. Open the frontend at http://localhost:10001/
 5. Send some test data using the script step4/services/serializer/testWrite.sh (or testWrite.bat)
 6. The data points should appear on the frontend chart
 
 ## Challenge
-![image](../images/fuge.png)
+![image](../images/fuge-logo.png)
 
-Right now we only have 3 moving parts in our system, but already it is becoming a pain to manage. In this step, your challenge is to get the system running using Fuge. Fuge is a micro-service development environment that helps ease the process of local development running processes and docker containers.
+Right now we only have 3 moving parts in our system, but already it is becoming a pain to manage. In this step, your challenge is to get the system running using Fuge. Fuge is a microservice development environment that helps ease the process of local development running processes and docker containers.
 
 The folder step4/fuge contains two files:
 
