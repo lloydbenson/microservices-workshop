@@ -10,13 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "end-of-stream": "1.1.x",
-    "express": "4.13.x",
     "influx": "4.1.x",
-    "lodash": "4.2.x",
-    "moment": "2.11.x",
+    "end-of-stream": "1.1.x",
+    "hapi": "13.5.x",
+    "inert": "4.0.x",
+    "moment": "2.14.x",
     "mosca": "1.0.x",
     "mqtt": "1.7.x",
-    "seneca": "1.1.x",
-    "websocket-stream": "3.1.x"
+    "seneca": "2.1.x",
+    "websocket-stream": "3.2.x"
   }
 }

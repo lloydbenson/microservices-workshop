@@ -8,7 +8,7 @@
 If you issue a `docker ps` you should see that docker is now running our system
 as a set of containers.
 
-Thats it - congratulations - you have succeeded in building an IoT micro-service
+Thats it - congratulations - you have succeeded in building an IoT microservice
 based system out of docker containers!!
 
 ## Next Up: Celebrate!!
