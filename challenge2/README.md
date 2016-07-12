@@ -1,12 +1,8 @@
-# Step 2
-
-## Solution to step 1
+## Solution to challenge 1
 
 1. The container can be started with `docker run -d -p 8083:8083 -p 8086:8086 tutum/influxdb`
-2. The files in step2/services/influx/ contain commands to start the influx container for your convenience.
-3. Run `docker ps -a | grep 'tutum/influxdb' | awk '{print $1}' | xargs docker inspect --format '{{ .NetworkSettings.IPAddress }}'`
-  3b. Run `docker-machine ip default` to obtain the docker-machine ip address if you are using docker-machine.
-4. Point your browser to http://\<dockerhostip\>:8083/ to open the influx console
+2. The files in challenge2/services/influx/ contain commands to start the influx container for your convenience.
+3. Point your browser to http://localhost:8083/ to open the influx console
 
 The `-p` argument maps ports 8083 and 8086 from the container to the host. The `-d` argument tells docker to run the container in [detached mode](https://docs.docker.com/engine/reference/run/#detached-d).
 
@@ -14,10 +10,10 @@ Note that when using docker locally, you are always dealing with a separate VM (
 
 You can stop the container at any time by using the `docker kill` or `docker stop` commands.
 
-## Challenge
-![image](../images/step2.png)
+## Challenge 2
+![image](../images/challenge2.png)
 
-Now that we have our database running, we are going to create a microservice to read and write to it. A serialization service has been created for you in step2/services/serializer.
+Now that we have our database running, we are going to create a microservice to read and write to it. A serialization service has been created for you in challenge2/services/serializer.
 
 Your challenge is to write a small script to start this process up and use it to write temperature values into influx DB. Once the service is up and running you can use the following command to send data points to the service.
 
@@ -38,4 +34,4 @@ You can check that the data points are indeed written to influx by pointing your
 select * from temperature;
 ```
 
-## Next Up [step3](../step3/README.md)
+## Next Up [challenge3](../challenge3/README.md)

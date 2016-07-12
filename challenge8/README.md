@@ -1,12 +1,10 @@
-# Step 8
+## Solution to challenge 7
 
-## solution to step 7
+1. The file challenge8/fuge/fuge-config.js has been updated to set tail to false
+2. The file challenge8/services/serializer/serializer.js has some additional trace added to it
+2. The file challenge8/frontend/api/index.js has some additional trace added to it
 
-1. The file step8/fuge/fuge-config.js has been updated to set tail to false
-2. The file step8/services/serializer/serializer.js has some additional trace added to it
-2. The file step8/frontend/api/index.js has some additional trace added to it
-
-## Challenge
+## Challenge 8
 
 Fuge is targeted at running an entire or part of a microservice system in
 development mode. However the format used is fully compatible with  tools like
@@ -15,7 +13,7 @@ Running containers in development can be slow, however if you are deploying
 using containers then building containers locally in order to check system
 validity is a good idea.
 
-A docker-compose file has been provided for you in step8/fuge/docker-compose.yml. Your challenge is to firstly run your system with fuge using this
+A docker-compose file has been provided for you in challenge8/fuge/docker-compose.yml. Your challenge is to firstly run your system with fuge using this
 docker-compose file. Once you have validated this try running it using docker-compose. You can find documentation on docker-compose here: [https://docs.docker.com/compose/](https://docs.docker.com/compose/)
 
-## Next Up [step9](../step9/README.md)
+## Next Up [final](../final/README.md)

@@ -52,10 +52,10 @@ A charting library for the web.
 
 http://code.shutterstock.com/rickshaw/
 
-### express
+### hapi
 A HTTP Web server library.
 
-http://expressjs.com/
+http://hapijs.com/
 
 ### websocket-stream
 A web socket streams implementation for realtime communication to the browser.
@@ -134,7 +134,7 @@ you should also pull a node.js container using:
 docker pull node
 ```
 
-Once you have the following complete its time to move to step0
+Once you have the following complete its time to move to challenge1.
 
 ### Workshop
 You should clone this repository to your local machine:
@@ -150,7 +150,7 @@ cd microservices-workshop
 npm install
 ```
 
-## Next Up [step1](./step1/README.md)
+## Next Up [challenge1](./challenge1/README.md)
 
 Credits:  This was heavily borrowed and modified from https://github.com/micro-services-tutorial-iot.  This was modified to work with another workshop.
 
