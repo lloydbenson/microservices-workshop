@@ -53,7 +53,7 @@ A charting library for the web.
 http://code.shutterstock.com/rickshaw/
 
 ### hapi
-A HTTP Web server library.
+A rich framework for building applications and services.
 
 http://hapijs.com/
 
@@ -112,13 +112,7 @@ that matches your installed version of Windows. cURL can be found at [https://cu
 generic version if using CMD.exe.
 
 ### Docker
-Go to https://www.docker.com/products/docker-toolbox and download and install the latest stable version of docker toolbox for your platform.
-
-Once you have the toolbox installed, start the default machine: `docker-machine start default`
-
-Set your shells environment using: `eval "$(docker-machine env default)"`.
-On Windows for cmd.exe use `@FOR /f "tokens=*" %i IN ('docker-machine.exe env') DO @%i` to set the environment.
-More details [here](https://docs.docker.com/machine/reference/env/).
+Go to https://docs.docker.com/docker-for-mac/ or https://docs.docker.com/docker-for-windows/ and download and install the latest version.
 
 Confirm that all is well by running: `docker ps`
 
