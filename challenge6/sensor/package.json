@@ -4,7 +4,7 @@
   "description": "",
   "main": "sensor.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node sensor.js"
   },
   "author": "",
   "license": "ISC",

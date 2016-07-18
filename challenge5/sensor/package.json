@@ -4,12 +4,12 @@
   "description": "",
   "main": "sensor.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node sensor.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mqtt": "1.7.x",
-    "seneca": "1.1.x"
+    "mqtt": "1.12.x",
+    "seneca": "2.1.x"
   }
 }

@@ -6,13 +6,11 @@ const mqtt = Mqtt.connect('mqtt://' + process.env.BROKER_HOST + ':1883');
 let offset = 100;
 
 
-
 mqtt.on('connect', () => {
   mqtt.subscribe('temperature/1/set', () => {
     console.log('subscribed', arguments);
   });
 });
-
 
 
 mqtt.on('message', (topic, payload) => {
