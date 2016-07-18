@@ -8,7 +8,7 @@
 export SERIALIZER_HOST=127.0.0.1
 export SERIALIZER_PORT=10000
 export FRONTEND_PORT=10001
-node index.js
+npm start
 ```
 
 4. Open the frontend at http://localhost:10001/

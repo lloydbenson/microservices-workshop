@@ -5,11 +5,25 @@ const Seneca = require('seneca');
 const server = new mosca.Server({});
 
 const seneca = Seneca();
+seneca.client({
+  host: process.env.SERIALIZER_HOST,
+  port: process.env.SERIALIZER_PORT,
+  pin: {
+    role: 'serialize', cmd: 'write'
+  }
+});
 
+server.published = (packet, client, cb) => {
+  if (!packet.topic.match(/temperature\/[0-9]+\/read/)) {
+    return cb();
+  }
 
-seneca.client({host: process.env.SERIALIZER_HOST, port: process.env.SERIALIZER_PORT, pin: {role: 'serialize', cmd: 'write'}});
+  const body = parse(packet.payload);
 
-
+  body.role = 'serialize';
+  body.cmd = 'write';
+  seneca.act(body, cb);
+};
 
 function parse (body) {
   try {
@@ -19,18 +33,3 @@ function parse (body) {
     return null;
   }
 }
-
-
-
-server.published = function (packet, client, cb) {
-  var body;
-  if (!packet.topic.match(/temperature\/[0-9]+\/read/)) {
-    return cb();
-  }
-
-  body = parse(packet.payload);
-
-  body.role = 'serialize';
-  body.cmd = 'write';
-  seneca.act(body, cb);
-};

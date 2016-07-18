@@ -4,12 +4,12 @@
   "description": "",
   "main": "serializer.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node serializer.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "influx": "4.1.x",
-    "seneca": "1.1.x"
+    "influx": "4.2.x",
+    "seneca": "2.1.x"
   }
 }

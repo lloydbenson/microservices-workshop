@@ -1,0 +1,23 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "belly-button",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "end-of-stream": "1.1.x",
+    "hapi": "13.5.x",
+    "inert": "4.0.x",
+    "moment": "2.14.x",
+    "seneca": "2.1.x",
+    "websocket-stream": "3.2.x"
+  },
+  "devDependencies": {
+    "belly-button": "2.0.x"
+  }
+}

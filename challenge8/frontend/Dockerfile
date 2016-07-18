@@ -1,4 +1,4 @@
-FROM node:4
+FROM node:6-slim
 ADD . /
-RUN cd api && npm install --ignore-scripts
-CMD node api/index.js
+RUN npm install --ignore-scripts
+CMD npm start

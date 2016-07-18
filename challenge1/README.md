@@ -6,7 +6,7 @@ In this challenge we have a simple front end for our system. Let's start off by 
 
 If you haven't done so already, start by running `npm install` in the top level directory of this repo. Then run the frontend as follows:
 
-1. `cd frontend/api`
+1. `cd frontend`
 2. `npm start`
 
 Point your browser to http://localhost:10001. You should see a chart. Simple!

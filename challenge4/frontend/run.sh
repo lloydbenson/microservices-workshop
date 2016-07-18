@@ -1,5 +1,5 @@
 #!/bin/bash
-export SERIALIZER_HOST=serializer
+export SERIALIZER_HOST=127.0.0.1
 export SERIALIZER_PORT=10000
 export FRONTEND_PORT=10001
-node api/index.js
+npm start

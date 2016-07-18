@@ -1,5 +1,4 @@
-FROM node:4
+FROM node:6-slim
 ADD . /
 RUN npm install --ignore-scripts
-CMD node serializer.js
-
+CMD npm start
