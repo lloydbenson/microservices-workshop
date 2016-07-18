@@ -1,0 +1,27 @@
+influx:
+  image: tutum/influxdb
+  container_name: influx
+  ports:
+    - 8086:8086
+    - 8083:8083
+serializer:
+  build: ../serializer/
+  container_name: serializer
+  environment:
+    - INFLUX_HOST=influx
+    - SERIALIZER_PORT=10000
+  links:
+    - influx:influx
+  ports:
+    - 10000:10000
+frontend:
+  build: ../frontend/
+  container_name: frontend
+  environment:
+    - SERIALIZER_HOST=serializer
+    - SERIALIZER_PORT=10000
+    - FRONTEND_PORT=10001
+  links:
+    - serializer:serializer
+  ports:
+    - 10001:10001

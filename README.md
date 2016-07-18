@@ -52,10 +52,10 @@ A charting library for the web.
 
 http://code.shutterstock.com/rickshaw/
 
-### express
-A HTTP Web server library.
+### hapi
+A rich framework for building applications and services.
 
-http://expressjs.com/
+http://hapijs.com/
 
 ### websocket-stream
 A web socket streams implementation for realtime communication to the browser.
@@ -112,13 +112,7 @@ that matches your installed version of Windows. cURL can be found at [https://cu
 generic version if using CMD.exe.
 
 ### Docker
-Go to https://www.docker.com/products/docker-toolbox and download and install the latest stable version of docker toolbox for your platform.
-
-Once you have the toolbox installed, start the default machine: `docker-machine start default`
-
-Set your shells environment using: `eval "$(docker-machine env default)"`.
-On Windows for cmd.exe use `@FOR /f "tokens=*" %i IN ('docker-machine.exe env') DO @%i` to set the environment.
-More details [here](https://docs.docker.com/machine/reference/env/).
+Go to https://docs.docker.com/docker-for-mac/ or https://docs.docker.com/docker-for-windows/ and download and install the latest version.
 
 Confirm that all is well by running: `docker ps`
 
@@ -134,7 +128,7 @@ you should also pull a node.js container using:
 docker pull node
 ```
 
-Once you have the following complete its time to move to step0
+Once you have the following complete its time to move to challenge1.
 
 ### Workshop
 You should clone this repository to your local machine:
@@ -150,7 +144,7 @@ cd microservices-workshop
 npm install
 ```
 
-## Next Up [step1](./step1/README.md)
+## Next Up [challenge1](./challenge1/README.md)
 
 Credits:  This was heavily borrowed and modified from https://github.com/micro-services-tutorial-iot.  This was modified to work with another workshop.
 
