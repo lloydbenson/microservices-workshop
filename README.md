@@ -2,10 +2,10 @@
 
 # Developing Microservices
 This workshop will walk you through creating and composing a set of
-microservices in node.js using fuge, docker and docker-compose.
+microservices in Node.js using fuge, docker and docker-compose.
 
 __Note:__ This is a beginners level workshop. Whilst you should be comfortable
-with node.js modules and applications and have a basic understanding of docker
+with Node.js modules and applications and have a basic understanding of docker
 and it's principles we will be helping you through the basics. This workshop presents a series of fairly simple challenges to help you get up to speed with these technologies.
 
 ## The app
@@ -93,15 +93,15 @@ A container engine.
 https://www.docker.com
 
 ## Setting up
-To complete this workshop you will need node.js and some supporting tools installed on your laptop along with a working docker installation with an InfluxDB image.
+To complete this workshop you will need Node.js and some supporting tools installed on your laptop along with a working docker installation with an InfluxDB image.
 
 You should follow the instruction for each component to get set up:
 
-### node.js
+### Node.js
 Go to https://nodejs.org/en/ and download and install the latest stable build for your system.
 
 ### fuge
-Once you have installed node.js fuge may be installed by running:
+Once you have installed Node.js fuge may be installed by running:
 ```
 npm install -g fuge
 ```
@@ -122,10 +122,10 @@ This tutorial uses a docker [influx db container](https://hub.docker.com/r/tutum
 docker pull tutum/influxdb
 ```
 
-you should also pull a node.js container using:
+you should also pull a Node.js container using:
 
 ```
-docker pull node
+docker pull node:6-slim
 ```
 
 Once you have the following complete its time to move to challenge1.
@@ -137,7 +137,7 @@ You should clone this repository to your local machine:
 git clone git@github.com:lloydbenson/microservices-workshop
 ```
 
-You should then setup the repository by installing required node modules:
+You should then setup the repository by installing required Node.js modules:
 
 ```
 cd microservices-workshop

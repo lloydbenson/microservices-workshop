@@ -1,9 +1,10 @@
 'use strict';
 
-const mosca = require('mosca');
+const Mosca = require('mosca');
 const Seneca = require('seneca');
-const server = new mosca.Server({});
 
+
+const server = new Mosca.Server({});
 const seneca = Seneca();
 seneca.client({
   host: process.env.SERIALIZER_HOST,
