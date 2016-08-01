@@ -146,7 +146,7 @@ npm install
 
 ## Next Up [challenge1](./challenge1/README.md)
 
-Credits:  This was heavily borrowed and modified from https://github.com/micro-services-tutorial-iot.  This was modified to work with another workshop.
+Credits:  This was heavily borrowed and modified from https://github.com/nearform/micro-services-tutorial-iot.  This was modified to work with another workshop.
 
 
 [Docker Cheat Sheet]: https://github.com/wsargent/docker-cheat-sheet
