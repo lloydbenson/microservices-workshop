@@ -7,13 +7,13 @@
      "node": ">= 4"
   },
   "scripts": {
-    "start": "node ."
+    "start": "node lib/index.js"
   },
   "dependencies": {
-    "hapi": "13.x.x",
+    "hapi": "14.x.x",
     "hapi-reveal": "3.x.x",
-    "inert": "3.x.x",
-    "vision": "3.x.x"
+    "inert": "4.x.x",
+    "vision": "4.x.x"
   },
   "author": "Lloyd Benson"
 }

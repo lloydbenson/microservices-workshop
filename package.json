@@ -1,23 +1,25 @@
 {
-  "name": "microservices-worksop",
+  "name": "microservices-workshop",
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "slides": "cd slides && npm start",
     "start": "cd final/fuge && docker-compose up",
     "stop": "cd final/fuge && docker-compose down"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "end-of-stream": "1.1.x",
-    "influx": "4.2.x",
-    "end-of-stream": "1.1.x",
-    "hapi": "13.5.x",
-    "inert": "4.0.x",
-    "moment": "2.14.x",
-    "mosca": "2.0.x",
-    "mqtt": "1.12.x",
-    "seneca": "2.1.x",
-    "websocket-stream": "3.2.x"
+    "end-of-stream": "1.x.x",
+    "hapi": "14.x.x",
+    "hapi-reveal": "3.x.x",
+    "inert": "4.x.x",
+    "influx": "4.x.x",
+    "moment": "2.x.x",
+    "mosca": "2.x.x",
+    "mqtt": "1.x.x",
+    "seneca": "2.x.x",
+    "vision": "4.x.x",
+    "websocket-stream": "3.x.x"
   }
 }

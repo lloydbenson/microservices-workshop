@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mqtt": "1.12.x",
-    "seneca": "2.1.x"
+    "mqtt": "1.x.x",
+    "seneca": "2.x.x"
   }
 }

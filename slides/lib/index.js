@@ -1,24 +1,32 @@
-var Hapi = require('hapi');
-var HapiReveal = require('hapi-reveal');
-var Inert = require('inert');
-var Vision = require('vision');
+'use strict';
 
-//create server
-var server = new Hapi.Server();
-server.connection({
-    port: 8082
-});
+const Path = require('path');
+const Hapi = require('hapi');
+const HapiReveal = require('hapi-reveal');
+const Inert = require('inert');
+const Vision = require('vision');
 
-server.register([Vision, Inert, HapiReveal], function (err) {
-    if (err) {
-        console.error('Failed to load plugin:', err);
+const serverConfig = {
+  connections: {
+    routes: {
+      files: {
+        relativeTo: Path.join(__dirname, '..')
+      }
     }
+  }
+};
+
+const server = new Hapi.Server(serverConfig);
+server.connection({ port: 8082 });
+
+server.register([Vision, Inert, HapiReveal], (err) => {
+  if (err) {
+    console.error('Failed to load plugin:', err);
+    process.exit(1);
+  }
 });
 
-server.start(function () {
-
-    //console
-    console.log("Presentation Started: " + server.info.uri);
-    console.log("Hapi Version: "+server.version);
+server.start(() => {
+  console.log(`Presentation Started: ${server.info.uri}`);
+  console.log(`Hapi Version: ${server.version}`);
 });
-
