@@ -49,40 +49,15 @@ Once we have built the application it should look a bit like this:
 ## The libraries
 The system uses the following libraries and technologies:
 
-### [Rickshaw Charts](http://code.shutterstock.com/rickshaw/)
-A charting library for the web.
-
-
-### [hapi](http://hapijs.com/)
-A rich framework for building applications and services.
-
-
-### [websocket-stream](https://www.npmjs.com/package/websocket-stream)
-A web socket streams implementation for realtime communication to the browser.
-
-
-### [browserify](http://browserify.org/)
-A module to let you require modules client side by bundling up dependencies.
-
-
-### [Seneca](http://senecajs.org/)
-A Microservices framework for Node.js.
-
-
-### [Mosca / MQTT](https://github.com/mcollina/mosca)
-An MQTT broker that enables robust message, particularly suited to IoT.
-
-
-### [InfluxDB](https://influxdb.com/)
-A time series database particularly suited to time sensitive data.
-
-
-### [Fuge](https://github.com/apparatus/fuge)
-A microservice development environment.
-
-
-### [Docker](https://www.docker.com)
-A container engine.
+* [Rickshaw Charts](http://code.shutterstock.com/rickshaw/) - Charting library for the web.
+* [hapi](http://hapijs.com/) - A rich framework for building applications and services.
+* [websocket-stream](https://www.npmjs.com/package/websocket-stream) - Websocket streams implementation for realtime communication to the browser.
+* [browserify](http://browserify.org/) - Module to let you require modules client side by bundling up dependencies.
+* [Seneca](http://senecajs.org/) - A Microservices framework for Node.js.
+* [Mosca / MQTT](https://github.com/mcollina/mosca) - MQTT broker that enables robust message, particularly suited to IoT.
+* [InfluxDB](https://influxdb.com/) - Time series database particularly suited to time sensitive data.
+* [Fuge](https://github.com/apparatus/fuge) - A microservice development environment.
+* [Docker](https://www.docker.com) - A container engine.
 
 
 ## Setting up
