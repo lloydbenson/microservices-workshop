@@ -32,8 +32,8 @@ curl -X POST -d '{"role": "serialize", "cmd": "write", "sensorId": "1", "tempera
 
 __hint__ If you look at the code in `serializer.js` you will notice that it uses the following environment variables:
 
-* INFLUX_HOST
-* SERIALIZER_PORT
+* `INFLUX_HOST`
+* `SERIALIZER_PORT`
 
 Your startup script will need to set these variables to the correct values.
 
