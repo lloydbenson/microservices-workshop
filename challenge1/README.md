@@ -13,7 +13,7 @@ cd frontend/
 npm start
 ```
 
-Point your browser to http://localhost:10001. You should see a chart. Simple!
+Point your browser to [http://localhost:10001](). You should see a chart. Simple!
 
 ## Challenge 1
 Next we are going to start our database. To do this we are going to take
