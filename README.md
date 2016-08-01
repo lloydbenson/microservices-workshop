@@ -2,18 +2,21 @@
 
 # Developing Microservices
 This workshop will walk you through creating and composing a set of
-microservices in Node.js using fuge, docker and docker-compose.
+microservices in Node.js using fuge, docker, and docker-compose.
 
 __Note:__ This is a beginners level workshop. Whilst you should be comfortable
 with Node.js modules and applications and have a basic understanding of docker
-and it's principles we will be helping you through the basics. This workshop presents a series of fairly simple challenges to help you get up to speed with these technologies.
+and it's principles we will be helping you through the basics. This workshop
+presents a series of fairly simple challenges to help you get up to speed with
+these technologies.
 
 ## The app
-The app you're building is a sensor fed chart that provides realtime
-data from a dummy sensor. This 'app' is broken down into a number of
-individual services, each with its own well defined concern. as outlined in this diagram
+The app you're building is a sensor fed chart that provides realtime data from a
+dummy sensor. This 'app' is broken down into a number of individual services,
+each with its own well defined concern, as outlined in the following diagram.
 
 ![image](./images/target.png)
+
 
 ### Frontend
 A simple web app that uses jQuery, Rickshaw charts, and WebSockets to show
@@ -34,117 +37,128 @@ websocket-stream to update the web app and thus the graph, in real time.
 
 ### Broker
 A robust messaging layer build for IoT based devices. We use this to wire up
-the actuator, serialiser and sensor in a loosely coupled fashion.
+the actuator, serializer, and sensor in a loosely coupled fashion.
 
 ### Influx
-A database in a container that the serialiser uses for robust storage of data.
+A database in a container that the serializer uses for robust storage of data.
 
 Once we have built the application it should look a bit like this:
 
 ![image](./images/screen.png)
 
 ## The libraries
-
 The system uses the following libraries and technologies:
 
-### Rickshaw Charts
+### [Rickshaw Charts](http://code.shutterstock.com/rickshaw/)
 A charting library for the web.
 
-http://code.shutterstock.com/rickshaw/
 
-### hapi
+### [hapi](http://hapijs.com/)
 A rich framework for building applications and services.
 
-http://hapijs.com/
 
-### websocket-stream
+### [websocket-stream](https://www.npmjs.com/package/websocket-stream)
 A web socket streams implementation for realtime communication to the browser.
 
-https://www.npmjs.com/package/websocket-stream
 
-### browserify
+### [browserify](http://browserify.org/)
 A module to let you require modules client side by bundling up dependencies.
 
-http://browserify.org/
 
-### Seneca
-A Microservices library
+### [Seneca](http://senecajs.org/)
+A Microservices framework for Node.js.
 
-http://senecajs.org/
 
-### Mosca / MQTT
+### [Mosca / MQTT](https://github.com/mcollina/mosca)
 An MQTT broker that enables robust message, particularly suited to IoT.
 
-https://github.com/mcollina/mosca
 
-### InfluxDB
+### [InfluxDB](https://influxdb.com/)
 A time series database particularly suited to time sensitive data.
 
-https://influxdb.com/
 
-### Fuge
-A microservice development environment
+### [Fuge](https://github.com/apparatus/fuge)
+A microservice development environment.
 
-https://github.com/apparatus/fuge
 
-### Docker
+### [Docker](https://www.docker.com)
 A container engine.
 
-https://www.docker.com
 
 ## Setting up
-To complete this workshop you will need Node.js and some supporting tools installed on your laptop along with a working docker installation with an InfluxDB image.
+To complete this workshop you will need
+[Node.js](https://nodejs.org/en/download/) and some supporting tools installed
+on your laptop along with a working docker installation with an InfluxDB image.
 
 You should follow the instruction for each component to get set up:
 
 ### Node.js
-Go to https://nodejs.org/en/ and download and install the latest stable build for your system.
+[Download](https://nodejs.org/en/download/) and install the latest stable build
+of Node.js for your system.
 
 ### fuge
-Once you have installed Node.js fuge may be installed by running:
-```
+Once you have installed Node.js, fuge may be installed by running:
+
+```bash
 npm install -g fuge
 ```
 
 ### cURL
-Windows does not come with cURL included in CMD.exe. If you are using Windows please install cURL ensuring you select the version
-that matches your installed version of Windows. cURL can be found at [https://curl.haxx.se/download.html](). Please use the Windows
-generic version if using CMD.exe.
+Windows does not come with cURL included in CMD.exe. If you are using Windows
+please install cURL ensuring you select the version that matches your installed
+version of Windows. cURL can be found at [https://curl.haxx.se/download.html]().
+Please use the Windows generic version if using CMD.exe.
 
 ### Docker
-Go to https://docs.docker.com/docker-for-mac/ or https://docs.docker.com/docker-for-windows/ and download and install the latest version.
+Download the latest version for [mac](https://docs.docker.com/docker-for-mac/)
+or [windows](https://docs.docker.com/docker-for-windows/) and install.
 
-Confirm that all is well by running: `docker ps`
+Confirm that all is well by running:
 
-This tutorial uses a docker [influx db container](https://hub.docker.com/r/tutum/influxdb/) you should pull this container using the following command:
-
+```bash
+docker ps
 ```
+
+This tutorial uses a docker [influx db
+container](https://hub.docker.com/r/tutum/influxdb/) you should pull this
+container from the docker registry using the following command:
+
+```bash
 docker pull tutum/influxdb
 ```
 
-you should also pull a Node.js container using:
+You should also pull a Node.js container using:
 
-```
+```bash
 docker pull node:6-slim
 ```
 
-Once you have the following complete its time to move to challenge1.
+Once you have the following complete its time to move to [challenge 1](./challenge1/README.md).
 
 ### Workshop
 You should clone this repository to your local machine:
 
-```
+```bash
 git clone git@github.com:lloydbenson/microservices-workshop
 ```
 
-You should then setup the repository by installing required Node.js modules:
+Then setup the repository by installing the required Node.js modules:
 
-```
+```bash
 cd microservices-workshop
 npm install
 ```
 
-## Next Up [challenge1](./challenge1/README.md)
+### Slides
+
+To follow along with the slides, after everything is installed execute the
+following.
+
+```bash
+npm run slides
+```
+
+## Next Up: [challenge 1](./challenge1/README.md)
 
 Credits:  This was heavily borrowed and modified from https://github.com/nearform/micro-services-tutorial-iot.  This was modified to work with another workshop.
 
