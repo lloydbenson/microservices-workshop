@@ -110,6 +110,7 @@ docker pull node:6-slim
 
 Once you have the following complete its time to move to [challenge 1](./challenge1/README.md).
 
+
 ### Workshop
 You should clone this repository to your local machine:
 
@@ -133,9 +134,11 @@ following.
 npm run slides
 ```
 
-## Next Up: [challenge 1](./challenge1/README.md)
+## Next Up: [Challenge 1](./challenge1/README.md)
 
-Credits:  This was heavily borrowed and modified from https://github.com/nearform/micro-services-tutorial-iot.  This was modified to work with another workshop.
+Credits:  This was heavily borrowed and modified from
+https://github.com/nearform/micro-services-tutorial-iot.  This was modified to
+work with another workshop.
 
 
 [Docker Cheat Sheet]: https://github.com/wsargent/docker-cheat-sheet

@@ -30,4 +30,4 @@ Documentation on how to start the container can be found
 Your challenge is to startup the InfluxDB container. Once you have it running
 successfully, open your browser and review the influx web interface.
 
-## Next Up: [challenge 2](../challenge2/README.md)
+## Next Up: [Challenge 2](../challenge2/README.md)
