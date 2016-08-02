@@ -1,7 +1,7 @@
 ## Solution to Challenge 3
 
 1. The influx container can be started with the scripts provided in _challenge4/influx_
-2. Start the serialization service with the script _challenge4/serializer/run.sh_ (or run.bat)
+2. Start the serialization service with the script _challenge4/serializer/run.sh_ (or _run.bat_)
 3. Start the frontend with a script that has the following contents:
 ```sh
 #!/bin/bash
@@ -12,7 +12,7 @@ npm start
 ```
 
 4. Open the frontend at [http://localhost:10001/]()
-5. Send some test data using the script _challenge4/serializer/testWrite.sh_ (or testWrite.bat)
+5. Send some test data using the script _challenge4/serializer/testWrite.sh_ (or _testWrite.bat_)
 6. The data points should appear on the frontend chart
 
 ## Challenge 4
