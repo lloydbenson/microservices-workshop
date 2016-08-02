@@ -34,7 +34,7 @@ have the system started, you can check that everything is working by using the
 script _challenge4/serializer/testWrite.sh_ (or testWrite.bat). You should see
 data coming through to the frontend chart.
 
-__hint__ you will need to stop all of the previously running processes and containers first.
+__hint__ you will need to stop all of the previously running processes and containers first. You may need to delete the influx container as well (`docker rm influx`).
 
 __hint__ make sure that you have installed fuge using `npm install -g fuge`.
 
