@@ -24,4 +24,6 @@ system running. Once you do this you should be able to start the front end,
 influx, and your microservices from the fuge shell and see data streaming from
 the sensor to the front end.
 
+If you are running docker v1.12.x remember to start influx using docker outside of fuge while we wait for a fix for the bug. `docker start influx`
+
 ## Next Up: [Challenge 6](../challenge6/README.md)
