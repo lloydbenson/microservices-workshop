@@ -22,4 +22,4 @@ Fuge automatically watches your services for you and will detect any changes to 
 
 __hint__ If you're not familiar with Node.js you can output to the console using `console.log('hello');`.
 
-## Next Up [Challenge 8](../challenge8/README.md)
+## Next Up: [Challenge 8](../challenge8/README.md)
