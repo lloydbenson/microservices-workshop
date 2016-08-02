@@ -1,4 +1,4 @@
-## Solution to challenge 4
+## Solution to Challenge 4
 
 1. The folder _challenge5/fuge_ contains configuration files for the fuge shell
 2. Start influx manually (with docker 1.12.x) `docker start influx`
