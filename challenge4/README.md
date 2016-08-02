@@ -31,7 +31,7 @@ The folder _challenge4/fuge_ contains two files:
 Your challenge is to run the system using the fuge shell. You can find some
 documentation on fuge [here](https://github.com/apparatus/fuge). Once you
 have the system started, you can check that everything is working by using the
-script _challenge4/serializer/testWrite.sh_ (or testWrite.bat). You should see
+script _challenge4/serializer/testWrite.sh_ (or _testWrite.bat_). You should see
 data coming through to the frontend chart.
 
 __hint__ you will need to stop all of the previously running processes and containers first. You may need to delete the influx container as well (`docker rm influx`).
@@ -39,6 +39,8 @@ __hint__ you will need to stop all of the previously running processes and conta
 __hint__ make sure that you have installed fuge using `npm install -g fuge`.
 
 __hint__ you can start the fuge shell using the `fuge shell` command
+
+__Note__ with docker 1.12 there are issues related to fuge and setting up a proxy correctly. Therefore, please start the influx container outside of fuge and start each of the services using the start command: `start serializer` and `start frontend`. 
 
 
 ## Next Up: [Challenge 5](../challenge5/README.md)
