@@ -8,7 +8,7 @@ serializer:
   build: ../serializer/
   container_name: serializer
   environment:
-    - INFLUX_HOST=influx
+    - INFLUX_HOST=127.0.0.1
     - SERIALIZER_PORT=10000
   links:
     - influx:influx
@@ -18,9 +18,9 @@ frontend:
   build: ../frontend/
   container_name: frontend
   environment:
-    - SERIALIZER_HOST=serializer
+    - SERIALIZER_HOST=127.0.0.1
     - SERIALIZER_PORT=10000
-    - ACTUATOR_HOST=actuator
+    - ACTUATOR_HOST=127.0.0.1
     - ACTUATOR_PORT=10004
     - FRONTEND_PORT=10001
   links:
@@ -32,7 +32,7 @@ broker:
   build: ../broker/
   container_name: broker
   environment:
-    - SERIALIZER_HOST=serializer
+    - SERIALIZER_HOST=127.0.0.1
     - SERIALIZER_PORT=10000
   links:
     - serializer:serializer
@@ -44,18 +44,8 @@ sensor:
   build: ../sensor/
   container_name: sensor
   environment:
-    - BROKER_HOST=broker
+    - BROKER_HOST=127.0.0.1
   links:
     - broker:broker
   ports:
     - 10003:10003
-actuator:
-  build: ../actuator/
-  container_name: actuator
-  environment:
-    - BROKER_HOST=broker
-    - ACTUATOR_PORT=10004
-  links:
-    - broker:broker
-  ports:
-    - 10004:10004

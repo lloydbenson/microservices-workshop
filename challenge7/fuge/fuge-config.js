@@ -7,7 +7,7 @@ module.exports = {
   proxy: 'none',
 
   // if true tail running process to the shell by default
-  tail: false,
+  tail: true,
 
   // if true monitor running processes for changes by default
   monitor: true,
