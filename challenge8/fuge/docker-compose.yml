@@ -16,6 +16,8 @@ services:
       - influx:influx
     ports:
       - 10000:10000
+    depends_on:
+      - influx
   frontend:
     build: ../frontend/
     container_name: frontend
@@ -30,6 +32,9 @@ services:
       - serializer:serializer
     ports:
       - 10001:10001
+    depends_on:
+      - serializer
+      - actuator
   broker:
     build: ../broker/
     container_name: broker
@@ -42,6 +47,8 @@ services:
       - 10002:10002
       - 1883:1883
       - 8883:8883
+    depends_on:
+      - serializer
   sensor:
     build: ../sensor/
     container_name: sensor
@@ -51,6 +58,8 @@ services:
       - broker:broker
     ports:
       - 10003:10003
+    depends_on:
+      - broker
   actuator:
     build: ../actuator/
     container_name: actuator
@@ -61,3 +70,5 @@ services:
       - broker:broker
     ports:
       - 10004:10004
+    depends_on:
+      - broker
