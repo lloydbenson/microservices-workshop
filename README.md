@@ -137,7 +137,7 @@ npm run slides
 ## Next Up: [Challenge 1](./challenge1/README.md)
 
 Credits:  This was heavily borrowed and modified from
-https://github.com/nearform/micro-services-tutorial-iot.  This was modified to
+[https://github.com/nearform/micro-services-tutorial-iot]().  This was modified to
 work with another workshop.
 
 
