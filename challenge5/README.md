@@ -12,7 +12,7 @@ __note__ Fuge is now running a mixture of processes and docker containers. It do
 * Running an internal proxy to bridge network connections between processes and containers
 
 ## Challenge 5
-![image](../docs/challenge5.png)
+![image](../images/challenge5.png)
 
 Now that we have our serializer service running, lets add the dummy sensor and
 our MQTT broker. The code for the sensor is in _challenge5/sensor_ and for the
