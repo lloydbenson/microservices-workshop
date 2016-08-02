@@ -8,7 +8,7 @@ serializer:
   build: ../serializer/
   container_name: serializer
   environment:
-    - INFLUX_HOST=influx
+    - INFLUX_HOST=127.0.0.1
     - SERIALIZER_PORT=10000
   links:
     - influx:influx
@@ -18,7 +18,7 @@ frontend:
   build: ../frontend/
   container_name: frontend
   environment:
-    - SERIALIZER_HOST=serializer
+    - SERIALIZER_HOST=127.0.0.1
     - SERIALIZER_PORT=10000
     - FRONTEND_PORT=10001
   links:
