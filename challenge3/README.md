@@ -24,7 +24,7 @@ Your challenge is to start up InfluxDB, the frontend, and the serialization
 service. To do this you will need to write a startup script for the frontend
 service in the same way as the serialization service.
 
-Once you have these up and running use the testWrite.sh script to send data to
+Once you have these up and running use the _testWrite.sh_ script to send data to
 the serialization service and see it appear in the front end.
 
 __hint__ If you look at the updated frontend code you will see that it uses the
