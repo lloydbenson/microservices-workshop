@@ -1,7 +1,7 @@
 ## Solution to Challenge 3
 
-1. The influx container can be started with the scripts provided in challenge4/influx
-2. Start the serialization service with the script challenge4/serializer/run.sh (or run.bat)
+1. The influx container can be started with the scripts provided in _challenge4/influx_
+2. Start the serialization service with the script _challenge4/serializer/run.sh_ (or run.bat)
 3. Start the frontend with a script that has the following contents:
 ```sh
 #!/bin/bash
@@ -11,8 +11,8 @@ export FRONTEND_PORT=10001
 npm start
 ```
 
-4. Open the frontend at http://localhost:10001/
-5. Send some test data using the script challenge4/serializer/testWrite.sh (or testWrite.bat)
+4. Open the frontend at [http://localhost:10001/]()
+5. Send some test data using the script _challenge4/serializer/testWrite.sh_ (or testWrite.bat)
 6. The data points should appear on the frontend chart
 
 ## Challenge 4
@@ -23,7 +23,7 @@ a pain to manage. Your challenge is to get the system running using Fuge. Fuge
 is a microservice development environment that helps ease the process of local
 development running processes and docker containers.
 
-The folder challenge4/fuge contains two files:
+The folder _challenge4/fuge_ contains two files:
 
 * compose-dev.yml - a docker compose format file that specifies the processes that make up our system
 * fuge-config.json - global fuge settings
@@ -31,7 +31,7 @@ The folder challenge4/fuge contains two files:
 Your challenge is to run the system using the fuge shell. You can find some
 documentation on fuge [here](https://github.com/apparatus/fuge). Once you
 have the system started, you can check that everything is working by using the
-script challenge4/serializer/testWrite.sh (or testWrite.bat). You should see
+script _challenge4/serializer/testWrite.sh_ (or testWrite.bat). You should see
 data coming through to the frontend chart.
 
 __hint__ you will need to stop all of the previously running processes and containers first.
