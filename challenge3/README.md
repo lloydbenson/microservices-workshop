@@ -1,9 +1,9 @@
 ## Solution to Challenge 2
 
-1. The influx container can be started with the scripts provided in challenge3/influx.  If you have the influx container created, you can run `docker start influx` to start it.
-2. The folder challenge3/serializer contains the code for the serialization service
-3. Start this service with the script challenge3/serializer/run.sh (or run.bat)
-4. Send some test data using the script challenge3/serializer/testWrite.sh (or testWrite.bat)
+1. The influx container can be started with the scripts provided in _challenge3/influx_.  If you have the influx container created, you can run `docker start influx` to start it.
+2. The folder _challenge3/serializer_ contains the code for the serialization service
+3. Start this service with the script _challenge3/serializer/run.sh_ (or run.bat)
+4. Send some test data using the script _challenge3/serializer/testWrite.sh_ (or testWrite.bat)
 5. Use the influx console to view data points
 
 __note__ The serializer code is a Seneca microservice. Seneca provides an
@@ -18,7 +18,7 @@ The next thing we will need to do is to hook up our frontend to our
 serialization service in order to read data values for charting.
 
 An updated frontend that talks to the serialization service is provided in
-challenge3/frontend.
+_challenge3/frontend_.
 
 Your challenge is to start up InfluxDB, the frontend, and the serialization
 service. To do this you will need to write a startup script for the frontend
