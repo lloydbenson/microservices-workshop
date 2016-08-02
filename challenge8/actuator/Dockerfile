@@ -1,4 +1,5 @@
 FROM node:6-slim
-ADD . /
-RUN npm install --ignore-scripts
-CMD npm start
+RUN mkdir -p /app
+ADD . /app
+RUN cd /app && npm install
+CMD node /app/actuator.js

@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "catbox": "7.x.x",
     "end-of-stream": "1.x.x",
     "hapi": "14.x.x",
     "inert": "4.x.x",
