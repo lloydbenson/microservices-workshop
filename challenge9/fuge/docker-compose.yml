@@ -1,61 +1,74 @@
-influx:
-  image: tutum/influxdb
-  container_name: influx
-  ports:
-    - 8086:8086
-    - 8083:8083
-serializer:
-  build: ../serializer/
-  container_name: serializer
-  environment:
-    - INFLUX_HOST=influx
-    - SERIALIZER_PORT=10000
-  links:
-    - influx:influx
-  ports:
-    - 10000:10000
-frontend:
-  build: ../frontend/
-  container_name: frontend
-  environment:
-    - SERIALIZER_HOST=serializer
-    - SERIALIZER_PORT=10000
-    - ACTUATOR_HOST=actuator
-    - ACTUATOR_PORT=10004
-    - FRONTEND_PORT=10001
-  links:
-    - actuator:actuator
-    - serializer:serializer
-  ports:
-    - 10001:10001
-broker:
-  build: ../broker/
-  container_name: broker
-  environment:
-    - SERIALIZER_HOST=serializer
-    - SERIALIZER_PORT=10000
-  links:
-    - serializer:serializer
-  ports:
-    - 10002:10002
-    - 1883:1883
-    - 8883:8883
-sensor:
-  build: ../sensor/
-  container_name: sensor
-  environment:
-    - BROKER_HOST=broker
-  links:
-    - broker:broker
-  ports:
-    - 10003:10003
-actuator:
-  build: ../actuator/
-  container_name: actuator
-  environment:
-    - BROKER_HOST=broker
-    - ACTUATOR_PORT=10004
-  links:
-    - broker:broker
-  ports:
-    - 10004:10004
+version: '2'
+services:
+  influx:
+    image: tutum/influxdb
+    container_name: influx
+    ports:
+      - 8086:8086
+      - 8083:8083
+  serializer:
+    build: ../serializer/
+    container_name: serializer
+    environment:
+      - INFLUX_HOST=influx
+      - SERIALIZER_PORT=10000
+    links:
+      - influx:influx
+    ports:
+      - 10000:10000
+    depends_on:
+      - influx
+  frontend:
+    build: ../frontend/
+    container_name: frontend
+    environment:
+      - SERIALIZER_HOST=serializer
+      - SERIALIZER_PORT=10000
+      - ACTUATOR_HOST=actuator
+      - ACTUATOR_PORT=10004
+      - FRONTEND_PORT=10001
+    links:
+      - actuator:actuator
+      - serializer:serializer
+    ports:
+      - 10001:10001
+    depends_on:
+      - serializer
+      - actuator
+  broker:
+    build: ../broker/
+    container_name: broker
+    environment:
+      - SERIALIZER_HOST=serializer
+      - SERIALIZER_PORT=10000
+    links:
+      - serializer:serializer
+    ports:
+      - 10002:10002
+      - 1883:1883
+      - 8883:8883
+    depends_on:
+      - serializer
+  sensor:
+    build: ../sensor/
+    container_name: sensor
+    environment:
+      - BROKER_HOST=broker
+    links:
+      - broker:broker
+    ports:
+      - 10003:10003
+    depends_on:
+      - broker
+  actuator:
+    build: ../actuator/
+    container_name: actuator
+    environment:
+      - BROKER_HOST=broker
+      - ACTUATOR_PORT=10004
+    links:
+      - broker:broker
+    ports:
+      - 10004:10004
+    depends_on:
+      - broker

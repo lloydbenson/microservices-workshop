@@ -9,7 +9,8 @@ as a set of containers.
 
 ## Challenge 9
 
-Next we want to be able to use an environment file to manage the variables in order to cleanup our _docker-compose.yml_ file a bit more.
+Add an environment file to manage the variables in order to cleanup our
+_docker-compose.yml_ file a bit more.
 
 _hint_ Look at the [docker-compose documentation](https://docs.docker.com/compose/compose-file/).
 
