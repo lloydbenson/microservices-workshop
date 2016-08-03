@@ -1,49 +1,62 @@
-influx:
-  image: tutum/influxdb
-  container_name: influx
-  ports:
-    - 8086:8086
-    - 8083:8083
-serializer:
-  env_file: ./dev.conf
-  build: ../serializer/
-  container_name: serializer
-  links:
-    - influx:influx
-  ports:
-    - 10000:10000
-broker:
-  env_file: ./dev.conf
-  build: ../broker/
-  container_name: broker
-  links:
-    - serializer:serializer
-  ports:
-    - 10002:10002
-    - 1883:1883
-    - 8883:8883
-sensor:
-  env_file: ./dev.conf
-  build: ../sensor/
-  container_name: sensor 
-  links:
-    - broker:broker
-  ports:
-    - 10003:10003
-actuator:
-  env_file: ./dev.conf
-  build: ../actuator/
-  container_name: actuator
-  links:
-    - broker:broker
-  ports:
-    - 10004:10004
-frontend:
-  env_file: ./dev.conf
-  build: ../frontend/
-  links:
-    - serializer:serializer
-    - actuator:actuator
-  container_name: frontend
-  ports:
-    - 10001:10001
+version: '2'
+services:
+  influx:
+    image: tutum/influxdb
+    container_name: influx
+    ports:
+      - 8086:8086
+      - 8083:8083
+  serializer:
+    env_file: ./dev.conf
+    build: ../serializer/
+    container_name: serializer
+    links:
+      - influx:influx
+    ports:
+      - 10000:10000
+    depends_on:
+      - influx
+  broker:
+    env_file: ./dev.conf
+    build: ../broker/
+    container_name: broker
+    links:
+      - serializer:serializer
+    ports:
+      - 10002:10002
+      - 1883:1883
+      - 8883:8883
+    depends_on:
+      - serializer
+  sensor:
+    env_file: ./dev.conf
+    build: ../sensor/
+    container_name: sensor
+    links:
+      - broker:broker
+    ports:
+      - 10003:10003
+    depends_on:
+      - broker
+  actuator:
+    env_file: ./dev.conf
+    build: ../actuator/
+    container_name: actuator
+    links:
+      - broker:broker
+    ports:
+      - 10004:10004
+    depends_on:
+      - broker
+  frontend:
+    env_file: ./dev.conf
+    build: ../frontend/
+    links:
+      - serializer:serializer
+      - actuator:actuator
+    container_name: frontend
+    ports:
+      - 10001:10001
+    depends_on:
+      - serializer
+      - actuator
