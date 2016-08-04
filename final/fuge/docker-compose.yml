@@ -16,6 +16,8 @@ services:
       - influx:influx
     ports:
       - 10000:10000
+    depends_on:
+      - influx
   broker:
     env_file: ./dev.conf
     build: ../broker/
@@ -26,6 +28,8 @@ services:
       - 10002:10002
       - 1883:1883
       - 8883:8883
+    depends_on:
+      - serializer
   sensor:
     env_file: ./dev.conf
     build: ../sensor/
@@ -34,6 +38,8 @@ services:
       - broker:broker
     ports:
       - 10003:10003
+    depends_on:
+      - broker
   actuator:
     env_file: ./dev.conf
     build: ../actuator/
@@ -42,6 +48,8 @@ services:
       - broker:broker
     ports:
       - 10004:10004
+    depends_on:
+      - broker
   frontend:
     env_file: ./dev.conf
     build: ../frontend/
@@ -51,3 +59,6 @@ services:
     container_name: frontend
     ports:
       - 10001:10001
+    depends_on:
+      - serializer
+      - actuator
