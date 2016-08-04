@@ -1,300 +1,247 @@
-				<section>
-					<h2>Developing Microservices</h2>
-					<p>
-						<small>Created by Lloyd Benson / lloyd.benson@gmail.com</small>
-					</p>
-					<p>
-						<small>adapted from <a href="https://github.com/nearform/micro-services-tutorial-iot">micro-services-tutorial-iot</a></small>
-					</p>
-					<p>
-						<a href="http://github.com/lloydbenson/presentations"><small>http://github.com/lloydbenson/presentations</small></a>
-					</p>
-				</section>
-{{> partials/whoami }}
-				<section>
-					<h3>Microservices are...</h3>
-					<ul>
-                                           <li>not a new concept; see unix</li>
-                                           <li>small, focused, decoupled components</li>
-                                           <li>independently deployable</li>
-                                           <li>particularly suited to node.js</li>
-                                        </ul>
-				</section>
-				<section>
-					<h3>Some Benefits</h3>
-					<ul>
-                                           <li>accelerated development</li>
-                                           <li>inherently scalable</li>
-                                           <li>optimized for delete</li>
-                                        </ul>
-				</section>
-				<section>
-					<h3>accelerated development</h3>
-					<ul>
-                                           <li>small components (easily grokked)</li>
-                                           <li>independently deployable</li>
-                                           <li>easily replaceable</li>
-                                        </ul>
-				</section>
-				<section>
-					<h3>inherently scalable</h3>
-					<ul>
-                                           <li>distributed by nature</li>
-                                        </ul>
-				</section>
-				<section>
-					<h3>optimized for delete</h3>
-					<ul>
-                                           <li>Greg Young - <a href="https://vimeo.com/108441214">https://vimeo.com/108441214</a></li>
-                                        </ul>
-				</section>
-				<section>
-					<h3>But Enough Theory!</h3>
-					<h2>This is a workshop...</h2>
-				</section>
-				<section>
-					<h3>Prerequisites</h3>
-					<ul>
-                                           <li>docker / docker-machine</li>
-                                           <li>node 4.x(nvm?)</li>
-                                           <li>git clone https://github.com/lloydbenson/microservices</li>
-                                           <li>docker pull tutum/influxdb</li>
-                                           <li>docker pull node</li>
-                                        </ul>
-				</section>
-				<section>
-					<h3>Let's build a system...</h3>
-					<img src="/images/ms_final.png">
-				</section>
-				<section>
-					<h3>It looks like this...</h3>
-					<img src="/images/ms_screen.png">
-				</section>
-				<section>
-					<h3>We will be using...</h3>
-					<ul>
-                                           <li>Rickshaw charts + socket.io</li>
-                                           <li>Node.js + express</li>
-                                           <li>Seneca (Microservices framework)</li>
-                                           <li>Mosca (MQTT broker)</li>
-                                           <li>InfluxDB (Time Series database)</li>
-                                           <li>Docker</li>
-                                        </ul>
-				</section>
-				<section>
-					<h3>You should now have</h3>
-                                        <pre><code data-trim contenteditable>
+<section data-markdown><script type="text/template">
+## Developing Microservices
+adapted from [_micro-services-iot_](https://github.com/nearform/micro-services-tutorial-iot)
+</script></section>
+<section data-markdown><script type="text/template">
+### Microservices are...
+* not a new concept; see unix
+* small, focused, decoupled components
+* independently deployable
+* particularly suited to Node.js
+</script></section>
+<section data-markdown><script type="text/template">
+### Some Benefits
+* accelerated development
+* inherently scalable
+* optimized for delete
+</script></section>
+<section data-markdown><script type="text/template">
+### Accelerated Development
+* small components (easily grokked)
+* independently deployable
+* easily replaceable
+</script></section>
+<section data-markdown><script type="text/template">
+### Inherently Scalable
+* distributed by nature
+* favor containerization
+</script></section>
+<section data-markdown><script type="text/template">
+### Optimized for Delete
+* Greg Young - [vimeo.com/108441214](https://vimeo.com/108441214)
+</script></section>
+<section data-markdown><script type="text/template">
+### But Enough Theory!
+## This is a workshop...
+</script></section>
+<section data-markdown><script type="text/template">
+### Prerequisites
+* docker 1.12.x
+* node 4 or newer
+</script></section>
+<section data-markdown><script type="text/template">
+### Setup
+```
+git clone https://github.com/lloydbenson/microservices-workshop
+docker pull tutum/influxdb
+docker pull node:6-slim
+```
+</script></section>
+<section data-markdown><script type="text/template">
+### Let's build a system...
+<img src="/images/ms_final.png">
+</script></section>
+<section data-markdown><script type="text/template">
+### It looks like this...
+<img src="/images/ms_screen.png">
+</script></section>
+<section data-markdown><script type="text/template">
+### We will be using...
+* Rickshaw charts + socket.io
+* Node.js + hapi
+* Seneca (Microservices framework)
+* Mosca (MQTT broker)
+* InfluxDB (Time Series database)
+* Docker
+</script></section>
+<section data-markdown><script type="text/template">
+### You should now have
+```
 ## should execute and show nothing running
 docker ps
 ## should show 2 images loaded (tutum/influxdb and node)
 docker images
-                                        </code></pre>
-				</section>
-				<section>
-					<h3>get the workshop</h3>
-                                        <pre><code data-trim contenteditable>
+```
+</script></section>
+<section data-markdown><script type="text/template">
+### Get the Workshop
+```
 git clone https://github.com/lloydbenson/microservices
-                                        </code></pre>
-				</section>
-				<section>
-					<h3>build the front end (step 0)</h3>
-					<ul>
-                                           <li>README.md</li>
-                                           <li>cd frontend/api</li>
-                                           <li>npm install</li>
-                                           <li>node .</li>
-                                           <li>http://localhost:10001</li>
-                                        </ul>
-				</section>
-				<section>
-					<h3>challenge (step 0)</h3>
-					<ul>
-                                           <li>start up the database</li>
-                                           <li>browse the influx web interface</li>
-                                           <li>hint: https://hub.docker.com/r/tutum/influxdb/</li>
-                                        </ul>
-				</section>
-				<section>
-					<h3>solution (step 0)</h3>
-					<ul>
-                                           <li>docker run -d -p 8083:8083 -p 8086:8086 tutum/influxdb</li>
-                                           <li>step1/services/influx/run.sh|bat</li>
-                                           <li>docker-machine ip default</li>
-                                           <li>docker ps -a | grep 'tutum/influxdb' <br/>
-                                               | awk '{print $1}' | xargs docker inspect<br/>
-                                               --format '\{{ .NetworkSettings.IPAddress }}'</li>
-                                           <li>http://localhost:8083 (influx console)</li>
-                                        </ul>
-				</section>
-				<section>
-					<h3>challenge (step 1)</h3>
-					<img src="/images/ms_step1.png">
-				</section>
-				<section>
-					<h3>challenge (step 1)</h3>
-					<ul>
-                                           <li>script start of step1/services/serializer</li>
-                                           <li>send data via curl</li>
-                                           <li>check that data was written by using the influx browser</li>
-                                           <li>hint: look for process.env in serializer.js</li>
-                                           <li>hint: select * from temperature; (from temperature db)</li>
-                                        </ul>
-                                        <pre><code data-trim contenteditable>
-curl -X POST --header "Content-Type:application/json" 
+```
+</script></section>
+<section data-markdown><script type="text/template">
+### Build the Frontend
+* _README.md_
+* `npm install`
+* `cd frontend`
+* `npm start`
+* open [http://localhost:10001]()
+</script></section>
+<section data-markdown><script type="text/template">
+### Challenge 1
+* start up the database
+* browse the influx web interface
+* hint: [https://hub.docker.com/r/tutum/influxdb]()
+</script></section>
+<section data-markdown><script type="text/template">
+### Solution to Challenge 1
+```
+docker run -d -p 8083:8083 -p 8086:8086 tutum/influxdb
+step1/services/influx/run.sh
+docker-machine ip default
+docker ps -a | grep 'tutum/influxdb'
+   | awk '{print $1}' | xargs docker inspect
+   --format '\{{ .NetworkSettings.IPAddress }}'
+
+[http://localhost:8083]() (influx console)
+```
+</script></section>
+<section data-markdown><script type="text/template">
+### Challenge 2
+<img src="/images/ms_step1.png">
+</script></section>
+<section data-markdown><script type="text/template">
+### Challenge 2
+* script start of challenge2/services/serializer
+* send data via curl
+* check that data was written by using the influx browser
+* hint: look for process.env in serializer.js
+* hint: select * from temperature; (from temperature db)
+
+```
+curl -X POST --header "Content-Type:application/json"
 -d '{"role": "serialize", "cmd": "write", "sensorId": "1",
      "temperature": 32}' http://localhost:10000/act
-                                        </code></pre>
-				</section>
-				<section>
-					<h3>solution (step 1)</h3>
-					<ul>
-                                           <li>step2/services/influx/run.sh|bat</li>
-                                           <li>step2/services/serializer/run.sh|bat</li>
-                                           <li>step2/services/serializer/testWrite.sh|bat</li>
-                                           <li>http://localhost:8083 (influx console)</li>
-                                        </ul>
-				</section>
-				<section>
-					<h3>challenge (step 2)</h3>
-					<img src="/images/ms_step2.png">
-				</section>
-				<section>
-					<h3>challenge (step 2)</h3>
-					<ul>
-                                           <li>make script to start step2/frontend</li>
-                                           <li>start up influxDB frontend and serializer</li>
-                                           <li>use testWrite.sh|bat to send data</li>
-                                           <li>verify it appears in the frontend</li>
-                                           <li>hint: look for process.env in frontend code</li>
-                                        </ul>
-				</section>
-				<section>
-					<h3>solution (step 2)</h3>
-					<ul>
-                                           <li>step3/services/influx/run.sh|bat</li>
-                                           <li>step3/services/serializer/run.sh|bat</li>
-                                           <li>step3/frontend/run.sh|bat</li>
-                                           <li>step3/services/serializer/testWrite.sh|bat</li>
-                                           <li>http://localhost:10001 (frontend)</li>
-                                        </ul>
-				</section>
-				<section>
-					<h3>challenge (step 3)</h3>
-					<img src="/images/ms_fuge.png">
-				</section>
-				<section>
-					<h3>challenge (step 3)</h3>
-					<ul>
-                                           <li>use fuge shell to start it up</li>
-                                           <li>step3/fuge (compose-dev.yml and fuge-config.json)</li>
-                                           <li>hint: stop all processes/containers</li>
-                                           <li>hint: npm install -g fuge</li>
-                                           <li>hint: fuge shell</li>
-                                           <li><a href="https://github.com/apparatus/fuge">fuge doc</a></li>
-                                        </ul>
-				</section>
-				<section>
-					<h3>solution (step 3)</h3>
-					<ul>
-                                           <li>cd step4/fuge</li>
-                                           <li>fuge shell compose-dev.yml</li>
-                                           <li>start all (in shell)</li>
-                                           <li>step4/services/serializer/testWrite.sh|bat</li>
-                                           <li>http://localhost:10001</li>
-                                        </ul>
-				</section>
-				<section>
-					<h3>challenge (step 4)</h3>
-					<img src="/images/ms_step4.png">
-				</section>
-				<section>
-					<h3>challenge (step 4)</h3>
-					<ul>
-                                           <li>add sensor and broker to fuge yml file</li>
-                                           <li>hint: step4/services/(broker|sensor)</li>
-                                        </ul>
-				</section>
-				<section>
-					<h3>solution (step 4)</h3>
-					<ul>
-                                           <li>cd step5/fuge</li>
-                                           <li>fuge shell compose-dev.yml</li>
-                                           <li>start all (in shell)</li>
-                                           <li>step4/services/serializer/testWrite.sh|bat</li>
-                                           <li>http://localhost:10001</li>
-                                        </ul>
-				</section>
-				<section>
-					<h3>challenge (step 5)</h3>
-					<img src="/images/ms_step5.png">
-				</section>
-				<section>
-					<h3>challenge (step 5)</h3>
-					<ul>
-                                           <li>add actuator to compose-dev.yml</li>
-                                           <li>actuator provides an offset</li>
-                                           <li>hint: step4/services/acuator</li>
-                                        </ul>
-                                        <br/>
-                                        <br/>
-                                        note: frontend now has input and button which does a /set
-				</section>
-				<section>
-					<h3>solution (step 5)</h3>
-					<ul>
-                                           <li>cd step6/fuge</li>
-                                           <li>fuge shell compose-dev.yml</li>
-                                           <li>start all (in shell)</li>
-                                           <li>http://localhost:10001</li>
-                                           <li>type 1000 and hit button</li>
-                                        </ul>
-				</section>
-				<section>
-					<h3>challenge (step 6)</h3>
-					<ul>
-                                           <li>limit default tail to false in fuge-config.js</li>
-                                           <li>fuge shell and start all</li>
-                                           <li>tail serializer</li>
-                                           <li>ps to show state</li>
-                                           <li>add trace output to step6/services/serializer/serializer.js</li>
-                                           <li>add trace output to step6/frontend/api/index.js</li>
-                                           <li>hint: output to console by console.log('hello')</li>
-                                        </ul>
-				</section>
-				<section>
-					<h3>solution (step 6)</h3>
-					<ul>
-                                           <li>step7/fuge/fuge-config.js tail set to false</li>
-                                           <li>step7/services/serializer/serializer.js (has additional trace)</li>
-                                           <li>step7/frontend/api/index.js (has additional trace)</li>
-                                        </ul>
-				</section>
-				<section>
-					<h3>challenge (step 7)</h3>
-					<ul>
-                                           <li>use fuge with step7/fuge/docker-compose.yml</li>
-                                           <li>use traditional docker-compose instead to show its compatibility</li>
-                                           <li>hint: https://docs.docker.com/compose</li>
-                                        </ul>
-				</section>
-				<section>
-					<h3>solution (step 7)</h3>
-					<ul>
-                                           <li>install docker-compose</li>
-                                           <li>cd step8/fuge</li>
-                                           <li>docker-compose up</li>
-                                           <li>http://localhost:10001 to verify everything</li>
-                                        </ul>
-				</section>
-				<section>
-					<h3>ALL FINISHED!!!</h3>
-				</section>
-				<section>
-					<h3>resources</h3>
-					<ul>
-                                          <li><a href="https://hub.docker.com/r/tutum/influxdb/">influx docker</a></li>
-                                          <li><a href="https://github.com/apparatus/fuge">fuge</a></li>
-                                          <li><a href="https://docs.docker.com/compose">docker compose</a></li>
-					</ul>
-				</section>
-{{> partials/questions }}
+```
+</script></section>
+<section data-markdown><script type="text/template">
+### Solution to Challenge 2
+* challenge3/services/influx/run.sh|bat
+* challenge3/services/serializer/run.sh|bat
+* challenge3/services/serializer/testWrite.sh|bat
+* [http://localhost:8083]() (influx console)
+</script></section>
+<section data-markdown><script type="text/template">
+### Challenge 3
+<img src="/images/ms_step2.png">
+</script></section>
+<section data-markdown><script type="text/template">
+### Challenge 3
+* make script to start challenge3/frontend
+* start up influxDB frontend and serializer
+* use testWrite.sh|bat to send data
+* verify it appears in the frontend
+* hint: look for process.env in frontend code
+</script></section>
+<section data-markdown><script type="text/template">
+### Solution to Challenge 3
+* challenge4/services/influx/run.sh|bat
+* challenge4/services/serializer/run.sh|bat
+* challenge4/frontend/run.sh|bat
+* challenge4/services/serializer/testWrite.sh|bat
+* [http://localhost:10001]() (frontend)
+</script></section>
+<section data-markdown><script type="text/template">
+### Challenge 4
+<img src="/images/ms_fuge.png">
+</script></section>
+<section data-markdown><script type="text/template">
+### Challenge 4
+* use fuge shell to start it up
+* challenge4/fuge (compose-dev.yml and fuge-config.json)
+* hint: stop all processes/containers
+* hint: npm install -g fuge
+* hint: fuge shell
+* [fuge doc](https://github.com/apparatus/fuge)
+</script></section>
+<section data-markdown><script type="text/template">
+### Solution to Challenge 4
+* cd challenge4/fuge
+* fuge shell compose-dev.yml
+* start all (in shell)
+* challenge4/services/serializer/testWrite.sh|bat
+* [http://localhost:10001]()
+</script></section>
+<section data-markdown><script type="text/template">
+### Challenge 5
+<img src="/images/ms_step4.png">
+</script></section>
+<section data-markdown><script type="text/template">
+### Challenge 5
+* add sensor and broker to fuge yml file
+* hint: challenge5/services/(broker|sensor)
+</script></section>
+<section data-markdown><script type="text/template">
+### Solution to Challenge 5
+* cd challenge6/fuge
+* fuge shell compose-dev.yml
+* start all (in shell)
+* challenge6/services/serializer/testWrite.sh|bat
+* [http://localhost:10001]()
+</script></section>
+<section data-markdown><script type="text/template">
+### Challenge 6
+<img src="/images/ms_step5.png">
+</script></section>
+<section data-markdown><script type="text/template">
+### Challenge 6
+* add actuator to compose-dev.yml
+* actuator provides an offset
+* hint: challenge6/services/acuator
+* _note_: frontend now has input and button which does a /set
+</script></section>
+<section data-markdown><script type="text/template">
+### Solution to Challenge 6
+* cd challenge7/fuge
+* fuge shell compose-dev.yml
+* start all (in shell)
+* [http://localhost:10001]()
+* type 1000 and click button
+</script></section>
+<section data-markdown><script type="text/template">
+### Challenge 7
+* limit default tail to false in fuge-config.js
+* fuge shell and start all
+* tail serializer
+* ps to show state
+* add trace output to challenge7/services/serializer/serializer.js
+* add trace output to challenge7/frontend/api/index.js
+* hint: output to console by console.log('hello')
+</script></section>
+<section data-markdown><script type="text/template">
+### Solution to Challenge 7
+* challenge8/fuge/fuge-config.js tail set to false
+* challenge8/services/serializer/serializer.js (has additional trace)
+* challenge8/frontend/api/index.js (has additional trace)
+</script></section>
+<section data-markdown><script type="text/template">
+### Challenge 8
+* use traditional docker-compose instead to show its compatibility
+* hint: [https://docs.docker.com/compose]()
+</script></section>
+<section data-markdown><script type="text/template">
+### Solution to Challenge 8
+* cd challenge9/fuge
+* docker-compose up
+* http://localhost:10001 to verify everything
+</script></section>
+<section data-markdown><script type="text/template">
+### Resources
+* [InfluxDB Docker](https://hub.docker.com/r/tutum/influxdb/)
+* [Fuge](https://github.com/apparatus/fuge)
+* [Docker Compose](https://docs.docker.com/compose)
+</script></section>
+<section data-markdown><script type="text/template">
+### Questions?
+
+</script></section>
