@@ -58,12 +58,12 @@ docker pull node:6-slim
 
 
 ### Let's build a system...
-<img src="/images/ms_final.png">
+<img src="/images/target.png">
 
 
 
 ### It looks like this...
-<img src="/images/ms_screen.png">
+<img src="/images/screen.png">
 
 
 
@@ -125,7 +125,7 @@ docker ps -a | grep 'tutum/influxdb'
 
 
 ### Challenge 2
-<img src="/images/ms_step1.png">
+<img src="/images/challenge1.png">
 
 
 
@@ -153,7 +153,7 @@ curl -X POST --header "Content-Type:application/json"
 
 
 ### Challenge 3
-<img src="/images/ms_step2.png">
+<img src="/images/challenge2.png">
 
 
 
@@ -176,7 +176,7 @@ curl -X POST --header "Content-Type:application/json"
 
 
 ### Challenge 4
-<img src="/images/ms_fuge.png">
+<img src="/images/fuge-logo.png">
 
 
 
@@ -200,7 +200,7 @@ curl -X POST --header "Content-Type:application/json"
 
 
 ### Challenge 5
-<img src="/images/ms_step4.png">
+<img src="/images/challenge5.png">
 
 
 
@@ -220,7 +220,7 @@ curl -X POST --header "Content-Type:application/json"
 
 
 ### Challenge 6
-<img src="/images/ms_step5.png">
+<img src="/images/challenge6.png">
 
 
 
