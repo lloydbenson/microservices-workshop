@@ -1,0 +1,15 @@
+{
+  "name": "actuator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "actuator.js",
+  "scripts": {
+    "start": "node actuator.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mqtt": "1.x.x",
+    "seneca": "2.x.x"
+  }
+}

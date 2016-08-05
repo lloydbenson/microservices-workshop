@@ -13,6 +13,9 @@ Running containers in development can be slow, however, if you are deploying
 using containers then building containers locally in order to check system
 validity is a good idea.
 
-A docker-compose file has been provided for you in _challenge8/fuge/docker-compose.yml_. Your challenge is to run the _docker-compose.yml_ file using docker-compose. You can find documentation on docker-compose [here](https://docs.docker.com/compose/).
+A docker-compose file has been provided for you in
+_challenge8/fuge/docker-compose.yml_. Your challenge is to run the
+_docker-compose.yml_ file using docker-compose. You can find documentation on
+docker-compose [here](https://docs.docker.com/compose/).
 
 ## Next Up: [Challenge 9](../challenge9/README.md)

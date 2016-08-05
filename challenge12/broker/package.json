@@ -1,0 +1,15 @@
+{
+  "name": "broker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "broker.js",
+  "scripts": {
+    "start": "node broker.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mosca": "2.x.x",
+    "seneca": "2.x.x"
+  }
+}
