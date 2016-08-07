@@ -88,6 +88,9 @@ Please use the Windows generic version if using CMD.exe.
 Download the latest version for [mac](https://docs.docker.com/docker-for-mac/)
 or [windows](https://docs.docker.com/docker-for-windows/) and install.
 
+## Docker Compose
+Download docker-compose at https://docs.docker.com/compose/install/.
+
 Confirm that all is well by running:
 
 ```bash
