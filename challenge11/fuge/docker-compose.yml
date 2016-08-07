@@ -4,7 +4,7 @@ services:
     image: tutum/influxdb
     container_name: influx
     volumes:
-      - "/Volumes:/data"
+      - "./data:/data"
     ports:
       - 8086:8086
       - 8083:8083

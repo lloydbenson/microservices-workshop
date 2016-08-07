@@ -21,7 +21,9 @@ dist
 .sass-cache
 app/bower_components
 options.mine.js
-db/
-data/
+data/db
+data/hh
+data/meta
+data/wal
 .DS_Store
 log

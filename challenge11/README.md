@@ -4,7 +4,7 @@
 2. Add a `volumes` entry to the influx service definition that maps a data directory on the host
 ```
 volumes:
-  - "/Volumes:/data"
+  - "./data:/data"
 ```
 
 
