@@ -108,7 +108,7 @@ docker pull tutum/influxdb
 You should also pull a Node.js container using:
 
 ```bash
-docker pull node:6-slim
+docker pull node:4
 ```
 
 Once you have the following complete its time to move to [challenge 1](./challenge1/README.md).
