@@ -8,9 +8,6 @@ The `-p` argument maps ports 8083 and 8086 from the container to the host. The
 `-d` argument tells docker to run the container in [detached
 mode](https://docs.docker.com/engine/reference/run/#detached-d).
 
-Note that when using docker locally, you are always dealing with a separate VM
-(at least on Mac and Windows).
-
 You can stop the container at any time by using the `docker kill` or `docker
 stop` commands.
 
