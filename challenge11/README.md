@@ -16,7 +16,7 @@ microservices public. For this challenge, update the _docker-compose.yml_
 file so that only the frontend and influx containers are exposed outside of the
 host.
 
-__hint__ read the details of docker-compose [expose](https://docs.docker.com/compose/compose-file/#/expose)
+__hint__ read the details of [docker-compose](https://docs.docker.com/compose/compose-file/)
 
 
 ## Next Up: [Challenge 12](../challenge12/README.md)

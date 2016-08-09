@@ -15,8 +15,6 @@ services:
     container_name: serializer
     links:
       - influx:influx
-    expose:
-      - "10000"
     depends_on:
       - influx
   broker:
@@ -25,10 +23,6 @@ services:
     container_name: broker
     links:
       - serializer:serializer
-    expose:
-      - "10002"
-      - "1883"
-      - "8883"
     depends_on:
       - serializer
   sensor:
@@ -37,8 +31,6 @@ services:
     container_name: sensor
     links:
       - broker:broker
-    expose:
-      - "10003"
     depends_on:
       - broker
   actuator:
@@ -47,8 +39,6 @@ services:
     container_name: actuator
     links:
       - broker:broker
-    expose:
-      - "10004"
     depends_on:
       - broker
   frontend:
