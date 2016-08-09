@@ -2,6 +2,8 @@
 ## Developing Microservices
 adapted from [_micro-services-iot_](https://github.com/nearform/micro-services-tutorial-iot)
 
+Presented by Wyatt Preul and Lloyd Benson
+
 
 
 ### Microservices are...
@@ -44,16 +46,8 @@ adapted from [_micro-services-iot_](https://github.com/nearform/micro-services-t
 
 ### Prerequisites
 * docker 1.12.x
+* docker-compose
 * node 4 or newer
-
-
-
-### Setup
-```
-git clone https://github.com/lloydbenson/microservices-workshop
-docker pull tutum/influxdb
-docker pull node:6-slim
-```
 
 
 
@@ -77,19 +71,24 @@ docker pull node:6-slim
 
 
 
+### Setup
+```
+### Get the Workshop
+git clone https://github.com/lloydbenson/microservices-workshop
+docker pull tutum/influxdb
+docker pull node:4
+docker-compose
+
+```
+
+
+
 ### You should now have
 ```
 ## should execute and show nothing running
 docker ps
 ## should show 2 images loaded (tutum/influxdb and node)
 docker images
-```
-
-
-
-### Get the Workshop
-```
-git clone https://github.com/lloydbenson/microservices
 ```
 
 
@@ -104,6 +103,7 @@ git clone https://github.com/lloydbenson/microservices
 
 
 ### Challenge 1
+Objective: Start up the InfluxDB and login into the web interface
 * start up the database
 * browse the influx web interface
 * hint: [https://hub.docker.com/r/tutum/influxdb]()
@@ -114,11 +114,6 @@ git clone https://github.com/lloydbenson/microservices
 ```
 docker run -d -p 8083:8083 -p 8086:8086 tutum/influxdb
 step1/services/influx/run.sh
-docker-machine ip default
-docker ps -a | grep 'tutum/influxdb'
-   | awk '{print $1}' | xargs docker inspect
-   --format '\{{ .NetworkSettings.IPAddress }}'
-
 [http://localhost:8083]() (influx console)
 ```
 
@@ -130,6 +125,7 @@ docker ps -a | grep 'tutum/influxdb'
 
 
 ### Challenge 2
+Objective: Start the serializer and start sending data to influx
 * script start of challenge2/services/serializer
 * send data via curl
 * check that data was written by using the influx browser
@@ -158,6 +154,7 @@ curl -X POST --header "Content-Type:application/json"
 
 
 ### Challenge 3
+Objective: Add serializer service and send test data
 * make script to start challenge3/frontend
 * start up influxDB frontend and serializer
 * use testWrite.sh|bat to send data
@@ -181,6 +178,7 @@ curl -X POST --header "Content-Type:application/json"
 
 
 ### Challenge 4
+Objective: Use fuge to manage your containers/processes
 * use fuge shell to start it up
 * challenge4/fuge (compose-dev.yml and fuge-config.json)
 * hint: stop all processes/containers
@@ -205,6 +203,7 @@ curl -X POST --header "Content-Type:application/json"
 
 
 ### Challenge 5
+Objective: Add sensor and broker
 * add sensor and broker to fuge yml file
 * hint: challenge5/services/(broker|sensor)
 
@@ -225,6 +224,7 @@ curl -X POST --header "Content-Type:application/json"
 
 
 ### Challenge 6
+Objective: Add actuator 
 * add actuator to compose-dev.yml
 * actuator provides an offset
 * hint: challenge6/services/acuator
@@ -242,6 +242,7 @@ curl -X POST --header "Content-Type:application/json"
 
 
 ### Challenge 7
+Objective: utilize tail in fuge
 * limit default tail to false in fuge-config.js
 * fuge shell and start all
 * tail serializer
@@ -260,6 +261,7 @@ curl -X POST --header "Content-Type:application/json"
 
 
 ### Challenge 8
+Objective: use docker-compose
 * use traditional docker-compose instead to show its compatibility
 * hint: [https://docs.docker.com/compose]()
 
@@ -269,6 +271,47 @@ curl -X POST --header "Content-Type:application/json"
 * cd challenge9/fuge
 * docker-compose up
 * http://localhost:10001 to verify everything
+
+
+
+### Challenge 9
+Objective: Utilize an environment file
+* Add an environment file
+* hint: [https://docs.docker.com/compose/compose-file/]().
+
+
+
+### Solution to Challenge 9
+* env_file: ./dev.conf
+
+
+
+### Challenge 10
+Objective: Keep a persistent database
+* A local data directory is already created for you.
+* hint: [https://docs.docker.com/compose/compose-file/]().
+
+
+
+### Solution to Challenge 10
+* volumes:
+  - "./data:/data"
+
+
+
+### Challenge 11
+Objective: ??
+* something
+
+
+
+### Solution to Challenge 11
+* solution
+
+
+
+### Challenge 12
+* ALL DONE!  What more should we do!?!?
 
 
 
