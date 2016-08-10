@@ -78,6 +78,18 @@ Presented by Wyatt Preul and Lloyd Benson
 
 
 
+
+### Ports for the services
+* influxdb: 8083
+* serializer: 10000
+* frontend: 10001
+* broker: 10002
+* sensor: 10003
+* actuator: 10004
+
+
+
+
 ### Setup
 ```bash
 ### Get the Workshop
