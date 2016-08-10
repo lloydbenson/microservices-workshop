@@ -306,18 +306,20 @@ Objective: Keep a persistent database
 
 
 ### Challenge 11
-Objective: ??
-* something
+Objective: scale frontend
+* Update docker-compose
+* Test with: `docker-compose scale frontend=2`
 
 
 
 ### Solution to Challenge 11
-* solution
+* Remove ports and container_name
+* `docker-compose scale frontend=2`
 
 
 
 ### Challenge 12
-* ALL DONE!  What more should we do!?!?
+* ALL DONE!
 
 
 
