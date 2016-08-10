@@ -1,7 +1,16 @@
 ## Solution to Challenge 11
 
 1. Open _docker-compose.yml_
-2. Change all `ports:` entries for all services except the frontend and influx to be `expose:`
+2. Delete the entry for `container_name`
+```
+container_name: frontend
+```
+3. Delete the published port for the frontend
+```
+ports:
+  - 10001:10001
+```
+4. Test by running `docker-compose scale frontend=2`
 
 
 ## Challenge 12
