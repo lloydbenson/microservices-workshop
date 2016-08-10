@@ -1,3 +1,10 @@
+## Setup
+Clone the workshop repository to your local machine:
+
+```bash
+git clone git@github.com:lloydbenson/microservices-workshop
+```
+
 
 ## Developing Microservices
 adapted from [_micro-services-iot_](https://github.com/nearform/micro-services-tutorial-iot)
@@ -72,19 +79,18 @@ Presented by Wyatt Preul and Lloyd Benson
 
 
 ### Setup
-```
+```bash
 ### Get the Workshop
 git clone https://github.com/lloydbenson/microservices-workshop
 docker pull tutum/influxdb
-docker pull node:4
+docker pull node:6-slim
 docker-compose
-
 ```
 
 
 
 ### You should now have
-```
+```bash
 ## should execute and show nothing running
 docker ps
 ## should show 2 images loaded (tutum/influxdb and node)
@@ -224,7 +230,7 @@ Objective: Add sensor and broker
 
 
 ### Challenge 6
-Objective: Add actuator 
+Objective: Add actuator
 * add actuator to compose-dev.yml
 * actuator provides an offset
 * hint: challenge6/services/acuator
