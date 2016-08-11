@@ -7,8 +7,8 @@ let offset = 100;
 
 
 mqtt.on('connect', () => {
-  mqtt.subscribe('temperature/1/set', () => {
-    console.log('subscribed', arguments);
+  mqtt.subscribe('temperature/1/set', (err, granted) => {
+    console.log('subscribed', granted);
   });
 });
 
