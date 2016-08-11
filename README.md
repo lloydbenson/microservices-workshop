@@ -108,7 +108,7 @@ docker pull tutum/influxdb
 You should also pull a Node.js container using:
 
 ```bash
-docker pull node:4
+docker pull node:6-slim
 ```
 
 Once you have the following complete its time to move to [challenge 1](./challenge1/README.md).
@@ -118,7 +118,7 @@ Once you have the following complete its time to move to [challenge 1](./challen
 You should clone this repository to your local machine:
 
 ```bash
-git clone git@github.com:lloydbenson/microservices-workshop
+git clone https://github.com/lloydbenson/microservices-workshop
 ```
 
 Then setup the repository by installing the required Node.js modules:
